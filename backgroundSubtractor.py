@@ -4,11 +4,12 @@ import numpy as np
 def limiar(amostra):
     out = amostra.copy()
     out[amostra >  25] = 255
-    out[amostra <= 25]  = 0
+    out[amostra <= 25] = 0
     return out
 
 def BW (amostra):
-    return ((0.2126 * amostra[:, :, 0]) + (0.7152 * amostra[:, :, 1]) + 
+    return ((0.2126 * amostra[:, :, 0]) + 
+            (0.7152 * amostra[:, :, 1]) + 
             (0.0722 * amostra[:, :, 2])).astype(np.uint8)
 
 def exit():
